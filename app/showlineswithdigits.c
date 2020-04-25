@@ -14,9 +14,9 @@ static void find_digit(int index, char *contents, int cursor, void *data);
 
 void showlineswithdigits(text txt)
 {
-    FILE* buffer=fopen("buffer.txt","w");
-    process_forward(txt, find_digit, buffer);
-
+    FILE* buf=fopen("buffer.txt","w");
+    process_forward(txt, find_digit, buf);
+    fclose(buf);
 }
 
 static void find_digit(int index, char *contents, int cursor, void *data)
