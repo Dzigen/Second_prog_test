@@ -32,4 +32,6 @@ void load(text txt, char *filename)
     while (fgets(buf, MAXLINE, f)) {
         append_line(txt, buf);
     }
+
+    fclose(f);
 }

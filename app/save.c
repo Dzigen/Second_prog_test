@@ -21,14 +21,14 @@ void save(text txt, char *filename)
     FILE *f;
     /* Открываем файл для чтения, контролируя ошибки */
     if ((f = fopen(filename, "r+")) == NULL) {
-        printf("The file %s cannot be opened\n", filename);
+        printf("The file %s cannot be opened", filename);
         return;
     }
 
     process_forward(txt, save_line, f);
 
-
     fclose(f);
+
 }
 
 /**
@@ -42,6 +42,6 @@ static void save_line(int index, char *contents, int cursor, void *data)
     UNUSED(index);
     UNUSED(cursor);
     /*ведём запись пока не дойдём до концв списка */
-    fputs(contents, data);
+    fputs(contents,data);
 
 }

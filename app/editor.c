@@ -35,7 +35,7 @@ int main()
 
     /* Цикл обработки команд */
     while (1) {
-        printf("ed > ");
+        printf("\ned > ");
 
         /* Получаем команду */
        if(fgets(cmdline, MAXLINE, stdin)==NULL){
@@ -132,7 +132,7 @@ int main()
                 fprintf(stderr, "Usage: load filename\n");
             } else {
 
-                if (str != NULL) {
+                if (str[0] != '\0') {
                     return_str(txt, str);
                     memset(str, '\0', MAXLINE + 1);
                 }
