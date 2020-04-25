@@ -21,7 +21,7 @@ void process_forward(text txt,
 {
     /* Проверяем, имеется ли текст */
     if (txt == NULL || txt->length == 0) {
-        fprintf(stderr, "Downloaded file is empty.You cannot use this command");
+        fprintf(stdout,"Downloaded file is empty.You cannot use this command");
         return;
     }
 

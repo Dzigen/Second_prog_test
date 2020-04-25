@@ -1,2 +1,3 @@
 [![Build Status](https://travis-ci.org/Dzigen/Second_prog_test.svg?branch=master)](https://travis-ci.org/Dzigen/Second_prog_test)
 [![Coverage Status](https://coveralls.io/repos/github/Dzigen/Second_prog_test/badge.svg?branch=master)](https://coveralls.io/github/Dzigen/Second_prog_test?branch=master)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Dzigen_Second_prog_test&metric=alert_status)](https://sonarcloud.io/dashboard?id=Dzigen_Second_prog_test)
