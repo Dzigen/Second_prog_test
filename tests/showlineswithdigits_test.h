@@ -17,7 +17,7 @@ TEST(ShowLinesWithDigits,PositiveTest_FileWithDigitsLines){
     text txt = create_text();
     remove_all(txt);
     append_line(txt, "qwert4uiop\n");
-    append_line(txt, "adghjklzx\n");
+    append_line(txt, "adghjk9lzx\n");
     append_line(txt, "ad6ghjklzx\0");
 
     showlineswithdigits(txt);
@@ -25,10 +25,13 @@ TEST(ShowLinesWithDigits,PositiveTest_FileWithDigitsLines){
     /*открываем buffer.txt для проверки выводимого текста*/
     buffer=fopen(buffername,"r");
 
-    fgets(outBuffer,255, buffer);
-        ASSERT_STREQ(outBuffer, "qwert4uiop\n");
-    fgets(outBuffer,255, buffer);
-        ASSERT_STREQ(outBuffer, "ad6ghjklzx\0");
+    node* current=txt->begin;
+
+    while(fgets(outBuffer,255,buffer)){
+        ASSERT_STREQ(outBuffer, current->contents);
+        current=current->next;
+    }
+
 
     fclose(buffer);
 
