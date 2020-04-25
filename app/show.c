@@ -18,8 +18,12 @@ static void show_line(int index, char *contents, int cursor, void *data);
  */
 void show(text txt)
 {
+    FILE* f=fopen("buffer.txt","w");
+
     /* Применяем функцию show_line к каждой строке текста */
-    process_forward(txt, show_line, NULL);
+    process_forward(txt, show_line, f);
+
+    fclose(f);
 }
 
 /*
@@ -33,7 +37,7 @@ static void show_line(int index, char *contents, int cursor, void *data)
     /* Декларируем неиспользуемые параметры */
     UNUSED(index);
     UNUSED(cursor);
-    UNUSED(data);
     /* Выводим строку на экран */
     printf("%s", contents);
+    fputs(contents,data);
 }

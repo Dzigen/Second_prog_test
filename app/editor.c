@@ -106,7 +106,11 @@ int main()
 
         if (strcmp(cmd, "mle") == 0) {
             if (str[0] == '\0') {
-                fprintf(stderr, "Usage: have no basis line\n");
+                fprintf(stderr, "Usage: have no basis line");
+
+                FILE* buf=fopen("buffer.txt","w");
+                fputs("Usage: have no basis line",buf);
+                fclose(buf);
             } else {
                 if (flag == 1)
                     flag = 0;
@@ -141,13 +145,11 @@ int main()
             continue;
         }
 
+        /* Если команда не известна */
+        fprintf(stderr, "Unknown command: %s\n", cmd);
 
     }
 
-
-    /* Если команда не известна */
-    fprintf(stderr, "Unknown command: %s\n", cmd);
-
-
+    remove("buffer.txt");
     return 0;
 }

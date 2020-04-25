@@ -14,8 +14,8 @@ static void find_digit(int index, char *contents, int cursor, void *data);
 
 void showlineswithdigits(text txt)
 {
-    char *digit_arr = "0123456789";
-    process_forward(txt, find_digit, digit_arr);
+    FILE* buffer=fopen("buffer.txt","w");
+    process_forward(txt, find_digit, buffer);
 
 }
 
@@ -23,6 +23,8 @@ static void find_digit(int index, char *contents, int cursor, void *data)
 {
     UNUSED(index);
     UNUSED(cursor);
-    if (strpbrk(contents, data) != 0)
+    if (strpbrk(contents, "0123456789") != 0){
         printf("%s", contents);
+        fprintf(data,"%s", contents);
+    }
 }

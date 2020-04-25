@@ -1,5 +1,5 @@
 /**
- * cursoe_loc.c -- меняем координаты курсора в тексте и возвращает строку , в которую подет подставлен курсор
+ * cursoe_loc.c -- меняем координаты курсора в тексте и возвращает строку , в которую будет подставлен курсор
  *
  * Copyright (c) 2020, Menshikov Mikhail
  *
@@ -10,6 +10,9 @@
 void cursor_loc_insert(text txt, char string[MAXLINE + 1], int line,
                        int position)
 {
+    /* Проверяем, имеется ли текст */
+    if (txt == NULL || txt->length == 0)
+        return;
 
 
     int len_string;

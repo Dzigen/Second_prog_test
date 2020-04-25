@@ -69,15 +69,9 @@ TEST(SaveFile,EmptyFile){
     output=fopen(outputfile,"w");
     fclose(output);
 
-    /*создаём файл для сохранения предупреждающего cообщения*/
-    buffer=fopen(buffername,"w");
-    int OldOut=dup(1);
-    dup2(fileno(buffer),1);
     save(txt,outputfile);
-    fclose(buffer);
-    dup2(OldOut,1);
 
-    /*открываем buffer.txt для проверки вывода сообщения о неодачном открытии файла output.txt*/
+    /*открываем buffer.txt для проверки вывода сообщения о неудачном открытии файла output.txt*/
     buffer=fopen(buffername,"r");
 
     while(fgets(outBuffer,255, buffer))
@@ -92,16 +86,16 @@ TEST(SaveFile,EmptyFile){
     remove(inputfile);
 
     free(txt);
-
 }
 
 TEST(SaveFile,NegativeTest_NotExistingFile){
 
-    char filename[20]="output.txt";
     char buffername[20]="buffer.txt";
+    FILE* buffer;
+    char outputname[20]="output.txt";
 
     char outBuffer[255];
-    char errorMessage[255]="The file output.txt cannot be opened";
+    char errorMessage[255]="This file cannot be opened";
 
     /*заполняем структуры строковым текстом*/
     text txt = create_text();
@@ -109,27 +103,18 @@ TEST(SaveFile,NegativeTest_NotExistingFile){
     append_line(txt, "qwertyuiop\n");
     append_line(txt, "adfghjklzx\0");
 
-    FILE* buffer=fopen(buffername,"w");
+    save(txt,outputname);
 
-    int oldoutput = dup(1);
-    dup2(fileno(buffer),1);
-    save(txt,filename);
-    fclose(buffer);
-    dup2(oldoutput,1);
-
-    /*открываем buffer.txt для проверки вывода сообщения о неодачном открытии файла output.txt*/
     buffer=fopen(buffername,"r");
 
     while(fgets(outBuffer,255, buffer))
-        for(int i=0;i<37;i++)
+        for(int i=0;i<26;i++)
             ASSERT_EQ(outBuffer[i],errorMessage[i]);
 
     fclose(buffer);
 
-    /* удаляем output.txt*/
-    remove(buffername);
-
     free(txt);
-
+    remove(buffername);
 }
+
 #endif // SAVE_TEST_H

@@ -17,17 +17,23 @@ static void save_line(int index, char *contents, int cursor, void *data);
  */
 void save(text txt, char *filename)
 {
-
+    FILE* buf=fopen("buffer.txt","w");
     FILE *f;
+
     /* Открываем файл для чтения, контролируя ошибки */
     if ((f = fopen(filename, "r+")) == NULL) {
-        printf("The file %s cannot be opened", filename);
+        printf("This file cannot be opened");
+
+        fputs("This file cannot be opened",buf);
+        fclose(buf);
+
         return;
     }
 
     process_forward(txt, save_line, f);
 
     fclose(f);
+    fclose(buf);
 
 }
 

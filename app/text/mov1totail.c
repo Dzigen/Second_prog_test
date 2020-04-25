@@ -11,6 +11,10 @@
 void mov1totail(text txt)
 {
 
+/* Проверяем, имеется ли текст */
+if (txt == NULL || txt->length == 0)
+    return;
+
 /*указываем новое начало текста*/
     node *old_head = txt->begin;
     node *new_head = txt->begin->next;
