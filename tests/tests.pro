@@ -10,9 +10,9 @@ QMAKE_CXXFLAGS += -Wall -Wextra -Werror
 QMAKE_CFLAGS += -Wall -Wextra -Werror
 
 # gcov
-QMAKE_CXXFLAGS += -fprofile-arcs -ftest-coverage
-QMAKE_CFLAGS += -fprofile-arcs -ftest-coverage
-LIBS += -lgcov
+QMAKE_CXXFLAGS +=-fprofile-arcs -ftest-coverage
+QMAKE_CFLAGS +=-fprofile-arcs -ftest-coverage
+LIBS +=-lgcov
 
 INCLUDEPATH += ../app
 

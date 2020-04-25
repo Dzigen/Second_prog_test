@@ -22,7 +22,7 @@ TEST(Mle,NegativeTest_NotCorrectInsert){
 
 
 }
-TEST(M,NegativeTest_EmptyFile){
+TEST(Mle,NegativeTest_EmptyFile){
 
 }
 

@@ -20,7 +20,7 @@ void save(text txt, char *filename)
 
     FILE *f;
     /* Открываем файл для чтения, контролируя ошибки */
-    if ((f = fopen(filename, "w")) == NULL) {
+    if ((f = fopen(filename, "r+")) == NULL) {
         printf("The file %s cannot be opened\n", filename);
         return;
     }

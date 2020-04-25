@@ -20,7 +20,7 @@ void load(text txt, char *filename)
     char buf[MAXLINE + 1];
 
     /* Открываем файл для чтения, контролируя ошибки */
-    if ((f = fopen(filename, "r")) == NULL) {
+    if ((f = fopen(filename, "r+")) == NULL) {
         printf("The file %s cannot be opened\n", filename);
         return;
     }
