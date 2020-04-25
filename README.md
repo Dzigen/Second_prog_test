@@ -1,1 +1,2 @@
-# Second_prog_test
+[![Build Status](https://travis-ci.org/Dzigen/Second_prog_test.svg?branch=master)](https://travis-ci.org/Dzigen/Second_prog_test)
+[![Coverage Status](https://coveralls.io/repos/github/Dzigen/Second_prog_test/badge.svg?branch=master)](https://coveralls.io/github/Dzigen/Second_prog_test?branch=master)
