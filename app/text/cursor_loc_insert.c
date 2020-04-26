@@ -60,7 +60,7 @@ void cursor_loc_insert(text txt, char string[MAXLINE+1], int line,
     } else if (position <= 0) {
         txt->cursor->position = 0;
         char buf[MAXLINE + 1] = "|";
-        strncat(buf, line_pos->contents,MAXLINE);
+        strcat(buf, line_pos->contents);
         strncpy(line_pos->contents, buf,MAXLINE);
 
     } else {
