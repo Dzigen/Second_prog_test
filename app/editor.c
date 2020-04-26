@@ -84,7 +84,7 @@ int main()
 
         /* ставим курсор в заданную позицию arg-строка,arg1-позиция в строке */
         if (strcmp(cmd, "m") == 0) {
-            if (((arg = strtok(NULL, " ")) == NULL)||((arg1 = strtok(NULL, " \n")) == NULL)) {
+            if (((arg = strtok(NULL, " ")) == NULL) || ((arg1 = strtok(NULL, " \n")) == NULL)) {
                 fprintf(stderr, "Usage: loss arguments\n");
             } else {
                 arg2 = atoi(arg);

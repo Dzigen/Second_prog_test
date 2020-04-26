@@ -30,8 +30,9 @@ TEST(PositiveTest_M,CorrectInput){
     node* current=txt->begin;
 
     while(fgets(outBuffer,255,buffer)){
-        for(int i=0;i<12;i++)
+        for(int i=0;i<12;i++){
             ASSERT_EQ(outBuffer[i],current->contents[i]);
+        }
         current=current->next;
     }
     fclose(buffer);
@@ -66,8 +67,9 @@ TEST(NegativeTest_M,OutOfRange_Up){
      node* current=txt->begin;
 
     while(fgets(outBuffer,255,buffer)){
-        for(int i=0;i<11;i++)
+        for(int i=0;i<11;i++){
             ASSERT_EQ(outBuffer[i],current->contents[i]);
+        }
         current=current->next;
     }
 
