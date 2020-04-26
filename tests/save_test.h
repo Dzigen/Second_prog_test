@@ -41,7 +41,7 @@ TEST(SaveFile,PositiveTest_NotEmptyFile){
     fclose(output);
     remove(filename);
 
-    free(txt);
+    remove_all(txt);
 }
 
 TEST(SaveFile,EmptyFile){
@@ -85,7 +85,7 @@ TEST(SaveFile,EmptyFile){
     remove(outputfile);
     remove(inputfile);
 
-    free(txt);
+    remove_all(txt);
 }
 
 TEST(SaveFile,NegativeTest_NotExistingFile){
@@ -113,8 +113,9 @@ TEST(SaveFile,NegativeTest_NotExistingFile){
 
     fclose(buffer);
 
-    free(txt);
     remove(buffername);
+
+    remove_all(txt);
 }
 
 #endif // SAVE_TEST_H

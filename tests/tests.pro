@@ -23,6 +23,7 @@ SOURCES += \
     ../app/showlineswithdigits.c \
     ../app/text/append_line.c \
     ../app/text/create_text.c \
+    ../app/text/cursor_insert_totail.c \
     ../app/text/cursor_loc_insert.c \
     ../app/text/mov1totail.c \
     ../app/text/process_forward.c \

@@ -70,6 +70,15 @@ void remove_all(text txt);
 void cursor_loc_insert(text txt,char string[MAXLINE+1],int line,int position);
 
 /**
+ * Ставим курсор в конец строки
+ *
+ * @param txt текст
+ * @param string буфер для хранения исходной строки
+ */
+void cursor_insert_totail(text txt);
+
+
+/**
  * перезаписывает строку без курсора
  * 
  * @param txt текст

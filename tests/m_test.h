@@ -19,26 +19,26 @@ TEST(M,PositiveTest_CorrectInput){
     text txt = create_text();
     remove_all(txt);
     append_line(txt, "1111111111\n");
-    append_line(txt, "2222222222\n");
-    append_line(txt, "3333333333\0");
+    append_line(txt, "22222222222\n");
+    append_line(txt, "33333333333\0");
 
     cursor_loc_insert(txt,str,1,1);
     show(txt);
 
     buffer=fopen(buffername,"r");
+
     node* current=txt->begin;
 
     while(fgets(outBuffer,255,buffer)){
-        for(int i=0;i<11;i++)
+        for(int i=0;i<12;i++)
             ASSERT_EQ(outBuffer[i],current->contents[i]);
         current=current->next;
     }
-
     fclose(buffer);
 
     remove(buffername);
 
-    free(txt);
+    remove_all(txt);
 
 }
 
@@ -93,7 +93,7 @@ TEST(M,NegativeTest_OutOfRange_Up){
 
     remove(buffername);
 
-    free(txt);
+    remove_all(txt);
 }
 
 TEST(M,NegativeTest_CorrectInput_LeftRight){
@@ -147,7 +147,7 @@ TEST(M,NegativeTest_CorrectInput_LeftRight){
 
     remove(buffername);
 
-    free(txt);
+    remove_all(txt);
 
 
 }
@@ -186,7 +186,7 @@ TEST(M,NegativeTest_EmptyFile){
     remove(inputname);
     remove(buffername);
 
-    free(txt);
+    remove_all(txt);
 
 }
 

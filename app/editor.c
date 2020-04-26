@@ -103,7 +103,7 @@ int main()
             }
             continue;
         }
-//==========================
+
         if (strcmp(cmd, "mle") == 0) {
             if (str[0] == '\0') {
                 fprintf(stderr, "Usage: have no basis line");
@@ -117,12 +117,11 @@ int main()
                 else {
                     return_str(txt, str);
                 }
-                cursor_loc_insert(txt, str, -1, -1);
+                cursor_insert_totail(txt);
                 show(txt);
             }
             continue;
         }
-//===========================
 
         /* Выводим текст */
         if (strcmp(cmd, "show") == 0) {

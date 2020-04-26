@@ -38,7 +38,7 @@ TEST(ShowLinesWithDigits,PositiveTest_FileWithDigitsLines){
     /*удаляем файл buffer.txt*/
     remove(buffername);
 
-    free(txt);
+    remove_all(txt);
 }
 
 TEST(ShowLinesWithDigits,NegativeTest_FileWithNoDigitsLines){
@@ -65,7 +65,7 @@ TEST(ShowLinesWithDigits,NegativeTest_FileWithNoDigitsLines){
     /*удаляем файл buffer.txt*/
     remove(buffername);
 
-    free(txt);
+    remove_all(txt);
 
 
 }
@@ -104,7 +104,7 @@ TEST(ShowLinesWithDigits,NegativeTest_EmptyFile){
     remove(inputname);
     remove(buffername);
 
-    free(txt);
+    remove_all(txt);
 
 }
 

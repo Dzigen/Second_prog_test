@@ -11,6 +11,7 @@ SOURCES += \
     showlineswithdigits.c \
     text/append_line.c \
     text/create_text.c \
+    text/cursor_insert_totail.c \
     text/cursor_loc_insert.c \
     text/mov1totail.c \
     text/process_forward.c \

@@ -35,8 +35,8 @@ TEST(C1n,PositiveTest_NotEmptyFile){
 
     fclose(buffer);
 
-   // remove(buffername);
-    free(txt);
+    remove(buffername);
+    remove_all(txt);
 }
 
 TEST(C1n,NegativeTest_EmptyFile){
@@ -73,7 +73,7 @@ TEST(C1n,NegativeTest_EmptyFile){
     remove(inputname);
     remove(buffername);
 
-    free(txt);
+    remove_all(txt);
 }
 
 #endif // C1N_H
