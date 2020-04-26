@@ -9,9 +9,10 @@
 #include "_text.h"
 
 
-void return_str(text txt, const char *str)
+void return_str(text txt, char string[MAXLINE+1])
 {
-    if (str[0] != '\0')
-        strcpy(txt->cursor->line->contents, str);
+
+    if (string[0] != '\0')
+        strncpy(txt->cursor->line->contents,string,MAXLINE);
 
 }

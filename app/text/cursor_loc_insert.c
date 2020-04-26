@@ -7,7 +7,7 @@
  */
 #include "_text.h"
 
-void cursor_loc_insert(text txt, char string[MAXLINE + 1], int line,
+void cursor_loc_insert(text txt, char string[MAXLINE+1], int line,
                        int position)
 {
     /* Проверяем, имеется ли текст */
@@ -35,7 +35,7 @@ void cursor_loc_insert(text txt, char string[MAXLINE + 1], int line,
 
     txt->cursor->line = line_pos;
     /*запоминаем строки перед изменением */
-    strcpy(string, line_pos->contents);
+    strncpy(string,line_pos->contents,MAXLINE);
 
     len_string = strlen(line_pos->contents);
 
@@ -54,22 +54,23 @@ void cursor_loc_insert(text txt, char string[MAXLINE + 1], int line,
          char* end_line=strchr(line_pos->contents,sign);
          *end_line = '|';
          txt->cursor->position = len_string;
-         strcat(line_pos->contents, sigw);
+         strncat(line_pos->contents, sigw,1);
+
 
     } else if (position <= 0) {
         txt->cursor->position = 0;
         char buf[MAXLINE + 1] = "|";
-        strcat(buf, line_pos->contents);
-        strcpy(line_pos->contents, buf);
+        strncat(buf, line_pos->contents,MAXLINE);
+        strncpy(line_pos->contents, buf,MAXLINE);
 
     } else {
         txt->cursor->position = (position-1);
 
         char buf1[MAXLINE + 1] = "";
         strncat(buf1, line_pos->contents, (position-1));
-        strcat(buf1, "|");
-        strcat(buf1, line_pos->contents + (position-1));
-        strcpy(line_pos->contents, buf1);
+        strncat(buf1, "|",1);
+        strncat(buf1, line_pos->contents + (position-1),MAXLINE);
+        strncpy(line_pos->contents, buf1,MAXLINE);
 
     }
 }
