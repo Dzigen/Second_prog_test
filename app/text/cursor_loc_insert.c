@@ -70,7 +70,7 @@ void cursor_loc_insert(text txt, char string[MAXLINE+1], int line,
         char buf1[MAXLINE + 1] = "";
         strncat(buf1, line_pos->contents, (position-1));
         strncat(buf1, "|",1);
-        strcat(buf1, line_pos->contents + (position-1));
+        strncat(buf1, line_pos->contents + (position-1),MAXLINE-position);
         strncpy(line_pos->contents, buf1,MAXLINE);
 
     }
