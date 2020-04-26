@@ -12,10 +12,6 @@ void cursor_insert_totail(text txt)
     /* Проверяем, имеется ли текст */
     if (txt == NULL || txt->length == 0)
         return;
-    if(txt->cursor->line==NULL){
-        fprintf(stderr, "Usage: have no basis line");
-        return;
-    }
 
     /*указатель на искомый символ*/
     const char* ach;
