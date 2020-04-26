@@ -30,7 +30,7 @@ if (txt == NULL || txt->length == 0)
 
     if((ach=strchr(txt->end->contents,'\0'))!=NULL){
         pos=ach-txt->end->contents;
-       txt->end->contents[pos]='\n';
+        txt->end->contents[pos]='\n';
      }
 
     txt->end->next = old_head;

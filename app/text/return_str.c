@@ -11,7 +11,7 @@
 
 void return_str(text txt, const char *str)
 {
-
-    strcpy(txt->cursor->line->contents, str);
+    if (str[0] != '\0')
+        strcpy(txt->cursor->line->contents, str);
 
 }

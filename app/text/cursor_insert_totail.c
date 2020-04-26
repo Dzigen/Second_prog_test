@@ -12,24 +12,18 @@ void cursor_insert_totail(text txt)
     /* Проверяем, имеется ли текст */
     if (txt == NULL || txt->length == 0)
         return;
-
-    /*указатель на искомый символ*/
-    const char* ach;
-    /*позиция курсора в конце строки*/
+    char* ach;
     int pos;
-    /*символ перевода на новую строку или конца строки*/
-    char* sgnw="";
 
-    if((ach=strchr(txt->cursor->line->contents,'\0'))!=NULL)
-        sgnw="\0";
-    if((ach=strchr(txt->cursor->line->contents,'\n'))!=NULL)
-        sgnw="\n";
-
-
-    pos=ach-txt->cursor->line->contents;
-    txt->cursor->line->contents[pos]='|';
-    txt->cursor->line->contents[pos+1]=*sgnw;
+    if((ach=strchr(txt->cursor->line->contents,'\n'))!=NULL){
+        pos=ach-txt->cursor->line->contents;
+        txt->cursor->line->contents[pos+1]='\n';
+     }else{
+        ach=strchr(txt->cursor->line->contents,'\0');
+        pos=ach-txt->cursor->line->contents;
+        txt->cursor->line->contents[pos+1]='\0';
+    }
+            txt->cursor->line->contents[pos]='|';
 
     txt->cursor->position=pos;
-
 }
