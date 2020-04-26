@@ -19,9 +19,9 @@ TEST(Mle,PositiveTest_CorrectInsert){
     text txt = create_text();
     remove_all(txt);
     append_line(txt, "1111111111\n");
-    append_line(txt, "22222222222\n");
-    append_line(txt, "33333333333\0");
+    append_line(txt, "2222222222\0");
 
+    /*ставим курсор во внутреннюю строку текста*/
     cursor_loc_insert(txt,str,1,1);
     return_str(txt,str);
     cursor_insert_totail(txt);
@@ -31,15 +31,34 @@ TEST(Mle,PositiveTest_CorrectInsert){
     node* current=txt->begin;
 
     while(fgets(outBuffer,255,buffer)){
-        for(int i=0;i<12;i++)
+        for(int i=0;i<11;i++)
             ASSERT_EQ(outBuffer[i],current->contents[i]);
         current=current->next;
     }
 
     fclose(buffer);
 
-    remove(buffername);
+    return_str(txt,str);
 
+    /*ставим курсор в конец текста*/
+    cursor_loc_insert(txt,str,2,1);
+    return_str(txt,str);
+    cursor_insert_totail(txt);
+    show(txt);
+
+    buffer=fopen(buffername,"r");
+
+    current=txt->begin;
+    while(fgets(outBuffer,255,buffer)){
+        for(int i=0;i<11;i++)
+            ASSERT_EQ(outBuffer[i],current->contents[i]);
+        current=current->next;
+    }
+
+    fclose(buffer);
+
+
+    remove(buffername);
     remove_all(txt);
 
 }
