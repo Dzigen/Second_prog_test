@@ -85,7 +85,7 @@ void cursor_insert_totail(text txt);
  * @str исходная строка текста
  * @returns none
  */
-void return_str(text txt,char* str);
+void return_str(text txt,const char* str);
 
 /**
  * перезаписывает строку без курсора

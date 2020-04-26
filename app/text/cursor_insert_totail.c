@@ -18,21 +18,21 @@ void cursor_insert_totail(text txt)
     }
 
     /*указатель на искомый символ*/
-    char* ach;
+    const char* ach;
     /*позиция курсора в конце строки*/
     int pos;
     /*символ перевода на новую строку или конца строки*/
-    char sgnw;
+    char* sgnw="";
 
     if((ach=strchr(txt->cursor->line->contents,'\0'))!=NULL)
-        sgnw='\0';
+        sgnw="\0";
     if((ach=strchr(txt->cursor->line->contents,'\n'))!=NULL)
-        sgnw='\n';
+        sgnw="\n";
 
 
     pos=ach-txt->cursor->line->contents;
     txt->cursor->line->contents[pos]='|';
-    txt->cursor->line->contents[pos+1]=sgnw;
+    txt->cursor->line->contents[pos+1]=*sgnw;
 
     txt->cursor->position=pos;
 

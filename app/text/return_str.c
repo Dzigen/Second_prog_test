@@ -9,7 +9,7 @@
 #include "_text.h"
 
 
-void return_str(text txt, char *str)
+void return_str(text txt, const char *str)
 {
 
     strcpy(txt->cursor->line->contents, str);

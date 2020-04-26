@@ -21,7 +21,7 @@ int main()
     char *cmd;
 
     char *arg;
-    char *arg1;
+    const char *arg1;
     int arg2;
     int arg3;
 
