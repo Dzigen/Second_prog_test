@@ -28,7 +28,7 @@ void load(text txt, char *filename);
 /**
 *	сохраняем содержимое отредактированного файла
 */
-void save(text txt, char *filename);
+void save(text txt,const char *filename);
 
 /**
 *	выводим те строки , в которых есть цифры

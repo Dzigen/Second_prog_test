@@ -61,7 +61,6 @@ void cursor_loc_insert(text txt, char string[MAXLINE+1], int line,
         txt->cursor->position = 0;
         char buf[MAXLINE + 1] = "|";
         strncpy(buf+1,line_pos->contents,MAXLINE-1);
-        //strcat(buf, line_pos->contents);
         strncpy(line_pos->contents, buf,MAXLINE);
 
     } else {

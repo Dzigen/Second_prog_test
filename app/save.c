@@ -15,7 +15,7 @@ static void save_line(int index, char *contents, int cursor, void *data);
 /**
  * Сохраняем отредактированный текст в файла
  */
-void save(text txt, char *filename)
+void save(text txt, const char *filename)
 {
     FILE* buf=fopen("buffer.txt","w");
     FILE *f;
