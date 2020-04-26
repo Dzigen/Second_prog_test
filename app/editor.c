@@ -17,6 +17,7 @@
 
 int main()
 {
+
     char cmdline[MAXLINE + 1];
     char *cmd;
 
@@ -32,7 +33,7 @@ int main()
     text txt = create_text();
 
     /* Цикл обработки команд */
-    while (1) {
+    while(1){
         printf("\ned > ");
 
         /* Получаем команду */
