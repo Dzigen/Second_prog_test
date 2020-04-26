@@ -25,9 +25,22 @@ if (txt == NULL || txt->length == 0)
     txt->begin->previous = NULL;
 
 /*расставляем указатели для нового конца текста*/
+    char* ach;
+    int pos;
+
+    if((ach=strchr(txt->end->contents,'\0'))!=NULL){
+        pos=ach-txt->end->contents;
+       txt->end->contents[pos]='\n';
+     }
+
     txt->end->next = old_head;
     old_head->next = NULL;
     old_head->previous = txt->end;
     txt->end = old_head;
+
+    if((ach=strchr(txt->end->contents,'\n'))!=NULL){
+        pos=ach-txt->end->contents;
+        txt->end->contents[pos]='\0';
+     }
 
 }

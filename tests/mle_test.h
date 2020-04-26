@@ -10,14 +10,7 @@ extern "C" {
 TEST(Mle,PositiveTest_CorrectInsert){
 
 }
-TEST(Mle,NegativeTest_OutOfRange_Right){
 
-
-}
-TEST(Mle,NegativeTest_OutOfRange_Left){
-
-
-}
 TEST(Mle,NegativeTest_NotCorrectInsert){
 
 
