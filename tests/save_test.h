@@ -8,7 +8,7 @@ extern "C" {
 #include<stdio.h>
 }
 
-TEST(SaveFile,PositiveTest_NotEmptyFile){
+TEST(PositiveTest_SaveFile,PositiveTest_NotEmptyFile){
 
     char filename[20]="output.txt";
     FILE* output;
@@ -44,7 +44,7 @@ TEST(SaveFile,PositiveTest_NotEmptyFile){
     remove_all(txt);
 }
 
-TEST(SaveFile,EmptyFile){
+TEST(NegativeTest_SaveFile,EmptyFile){
 
     char inputfile[20]="input.txt";
     FILE* input;
@@ -88,7 +88,7 @@ TEST(SaveFile,EmptyFile){
     remove_all(txt);
 }
 
-TEST(SaveFile,NegativeTest_NotExistingFile){
+TEST(NegativeTest_SaveFile,NegativeTest_NotExistingFile){
 
     char buffername[20]="buffer.txt";
     FILE* buffer;

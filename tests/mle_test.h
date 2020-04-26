@@ -8,7 +8,7 @@ extern "C" {
 }
 
 
-TEST(Mle,PositiveTest_CorrectInsert){
+TEST(PositiveTest_Mle,CorrectInsert){
     char buffername[20]="buffer.txt";
     FILE* buffer;
 
@@ -63,7 +63,7 @@ TEST(Mle,PositiveTest_CorrectInsert){
 
 }
 
-TEST(Mle,NegativeTest_NotCorrectInsert){
+TEST(NegativeTest_Mle,NotCorrectInsert){
     char buffername[20]="buffer.txt";
     FILE* buffer;
 
@@ -105,7 +105,7 @@ TEST(Mle,NegativeTest_NotCorrectInsert){
 
 }
 
-TEST(Mle,NegativeTest_EmptyFile){
+TEST(NegativeTest_Mle,EmptyFile){
     char inputname[20]="input.txt";
     FILE* input;
     char buffername[20]="buffer.txt";

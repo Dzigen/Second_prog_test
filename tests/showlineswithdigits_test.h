@@ -7,7 +7,7 @@ extern "C" {
 #include "common.h"
 }
 
-TEST(ShowLinesWithDigits,PositiveTest_FileWithDigitsLines){
+TEST(PositiveTest_ShowLinesWithDigits,FileWithDigitsLines){
 
     char buffername[20]="buffer.txt";
     FILE* buffer;
@@ -41,7 +41,7 @@ TEST(ShowLinesWithDigits,PositiveTest_FileWithDigitsLines){
     remove_all(txt);
 }
 
-TEST(ShowLinesWithDigits,NegativeTest_FileWithNoDigitsLines){
+TEST(NegativeTest_ShowLinesWithDigits,FileWithNoDigitsLines){
     char buffername[20]="buffer.txt";
     FILE* buffer;
 
@@ -70,7 +70,7 @@ TEST(ShowLinesWithDigits,NegativeTest_FileWithNoDigitsLines){
 
 }
 
-TEST(ShowLinesWithDigits,NegativeTest_EmptyFile){
+TEST(NegativeTest_ShowLinesWithDigits,NegativeTest_EmptyFile){
 
     char inputname[20]="input.txt";
     FILE* input;

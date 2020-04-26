@@ -7,7 +7,7 @@ extern "C" {
 #include "common.h"
 }
 
-TEST(C1n,PositiveTest_NotEmptyFile){
+TEST(PositiveTest_C1n,NotEmptyFile){
 
     char buffername[20]="buffer.txt";
     FILE* buffer;
@@ -39,7 +39,7 @@ TEST(C1n,PositiveTest_NotEmptyFile){
     remove_all(txt);
 }
 
-TEST(C1n,NegativeTest_EmptyFile){
+TEST(NegativeTest_C1n,EmptyFile){
 
     char inputname[20]="input.txt";
     FILE* input;

@@ -7,7 +7,7 @@ extern "C" {
 #include "common.h"
 }
 
-TEST(M,PositiveTest_CorrectInput){
+TEST(PositiveTest_M,CorrectInput){
 
     char buffername[20]="buffer.txt";
     FILE* buffer;
@@ -42,7 +42,7 @@ TEST(M,PositiveTest_CorrectInput){
 
 }
 
-TEST(M,NegativeTest_OutOfRange_Up){
+TEST(NegativeTest_M,OutOfRange_Up){
     char buffername[20]="buffer.txt";
     FILE* buffer;
 
@@ -96,7 +96,7 @@ TEST(M,NegativeTest_OutOfRange_Up){
     remove_all(txt);
 }
 
-TEST(M,NegativeTest_CorrectInput_LeftRight){
+TEST(NegativeTest_M,CorrectInput_LeftRight){
     char buffername[20]="buffer.txt";
     FILE* buffer;
 
@@ -152,7 +152,7 @@ TEST(M,NegativeTest_CorrectInput_LeftRight){
 
 }
 
-TEST(M,NegativeTest_EmptyFile){
+TEST(NegativeTest_M,EmptyFile){
     char inputname[20]="input.txt";
     FILE* input;
     char buffername[20]="buffer.txt";
