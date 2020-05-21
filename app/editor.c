@@ -19,6 +19,7 @@ int main()
 {
 
     char cmdline[MAXLINE + 1];
+    char* parametrs;
     char *cmd;
 
     char *arg;
@@ -43,7 +44,7 @@ int main()
            continue;
        }
         /* Извлекаем имя команды */
-        if ((cmd = strtok(cmdline, " \n")) == NULL)
+        if ((cmd = strtok_r(cmdline, " \n",&parametrs)) == NULL)
             continue;
 
 
